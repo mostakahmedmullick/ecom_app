@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:ecom_app/utils/ColorConstants.dart';
 import 'package:ecom_app/utils/theme.dart';
 import 'package:flutter/material.dart';
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Ecom',
       theme: basicTheme(),
       home: MyHomePage(title: 'Ecom'),
@@ -33,14 +35,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +45,27 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
         elevation: 0.0,
         bottomOpacity: 0.0,
+        actions: <Widget>[
+          Badge(
+            position: BadgePosition.topEnd(top: 5, end: 5),
+            badgeContent: Text(
+              '5',
+              style: GoogleFonts.lato(color: Colors.white),
+            ),
+            badgeColor: ColorConstants.secondaryColor,
+            elevation: 0.0,
+            child: IconButton(
+              icon: SvgPicture.asset(
+                'assets/svg-icon/appbar-cart.svg',
+                height: 20,
+                width: 15,
+              ),
+              onPressed: () {
+                print('hi');
+              },
+            ),
+          ),
+        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -319,24 +334,38 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                decoration: BoxDecoration(color: ColorConstants.primaryColor),
+                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
+                child: SizedBox(
+                  child: TextField(
+                    // onChanged: onTextChange,
+                    decoration: InputDecoration(
+                      fillColor: Colors.white,
+                      filled: true,
+                      suffixIcon: Icon(Icons.search),
+                      hintText: 'Search for Product..',
+                      hintStyle: GoogleFonts.lato(),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(10),
+                        borderSide: BorderSide.none,
+                      ),
+                      contentPadding: EdgeInsets.symmetric(horizontal: 15.0),
+                    ),
+                  ),
+                ),
+              ),
+              // ConstrainedBox(
+              //   constraints: BoxConstraints(maxHeight: 50),
+              //   child:
+              // )
+            ],
+          ),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
       ),
     );
   }
