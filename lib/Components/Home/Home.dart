@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:ecom_app/Components/Home/CategoriesSlider.dart';
 import 'package:ecom_app/Components/Home/HomeTopSlider.dart';
+import 'package:ecom_app/Components/products/product_grid.dart';
 import 'package:ecom_app/utils/ColorConstants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -16,6 +17,14 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  List<String> images = [
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png",
+    "https://static.javatpoint.com/tutorial/flutter/images/flutter-logo.png"
+  ];
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -357,7 +366,7 @@ class _HomeState extends State<Home> {
                           color: ColorConstants.secondaryColor,
                         ),
                         child: Text(
-                          'Top Deals',
+                          'Jeans Collections',
                           style: GoogleFonts.lato(
                               color: Colors.white, fontSize: 16.0),
                         ),
@@ -369,21 +378,27 @@ class _HomeState extends State<Home> {
                       alignment: Alignment.centerRight,
                       child: Padding(
                         padding: const EdgeInsets.only(right: 8.0),
-                        child: RichText(
-                          text: TextSpan(
-                            children: [
-                              TextSpan(
-                                text: "View More  ",
-                                style: GoogleFonts.lato(color: ColorConstants.primaryColor),
-                              ),
-                              WidgetSpan(
-                                child: SvgPicture.asset(
-                                  'assets/svg-icon/right-arrow.svg',
-                                  width: 12,
-                                  height: 12,
+                        child: InkWell(
+                          onTap: () {
+                            print('hiii');
+                          },
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "View More  ",
+                                  style: GoogleFonts.lato(
+                                      color: ColorConstants.primaryColor),
                                 ),
-                              ),
-                            ],
+                                WidgetSpan(
+                                  child: SvgPicture.asset(
+                                    'assets/svg-icon/right-arrow.svg',
+                                    width: 12,
+                                    height: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ),
@@ -391,6 +406,7 @@ class _HomeState extends State<Home> {
                   ),
                 ],
               ),
+              ProductsGrid(),
             ],
           ),
         ),
