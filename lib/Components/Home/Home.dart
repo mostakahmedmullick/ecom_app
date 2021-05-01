@@ -1,4 +1,5 @@
 import 'package:badges/badges.dart';
+import 'package:ecom_app/Components/Home/CategoriesSlider.dart';
 import 'package:ecom_app/Components/Home/HomeTopSlider.dart';
 import 'package:ecom_app/utils/ColorConstants.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,7 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
         title: Text(
           widget.title,
@@ -339,8 +341,56 @@ class _HomeState extends State<Home> {
                   ),
                 ),
               ),
-              // Text('ji'),
               HomeTopSlider(),
+              CategoriesSlider(),
+              Row(
+                children: [
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20.0),
+                          ),
+                          color: ColorConstants.secondaryColor,
+                        ),
+                        child: Text(
+                          'Top Deals',
+                          style: GoogleFonts.lato(
+                              color: Colors.white, fontSize: 16.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: RichText(
+                          text: TextSpan(
+                            children: [
+                              TextSpan(
+                                text: "View More  ",
+                                style: GoogleFonts.lato(color: ColorConstants.primaryColor),
+                              ),
+                              WidgetSpan(
+                                child: SvgPicture.asset(
+                                  'assets/svg-icon/right-arrow.svg',
+                                  width: 12,
+                                  height: 12,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
@@ -348,3 +398,18 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
+// class MyCustomContainer extends CustomClipper<Path> {
+//   @override
+//   Path getClip(Size size) {
+//     var path = new Path();
+//     path.lineTo(100, size.height - 200);
+//     path.lineTo(size.width, size.height - 150);
+//     path.lineTo(size.width, 0.0);
+//     path.close();
+//     return path;
+//   }
+
+//   @override
+//   bool shouldReclip(covariant CustomClipper<Path> oldClipper) => false;
+// }
