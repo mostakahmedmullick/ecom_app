@@ -1,7 +1,9 @@
 import 'package:badges/badges.dart';
 import 'package:ecom_app/Components/Home/CategoriesSlider.dart';
 import 'package:ecom_app/Components/Home/HomeTopSlider.dart';
+import 'package:ecom_app/Components/Home/cashback_slider.dart';
 import 'package:ecom_app/Components/products/product_grid.dart';
+import 'package:ecom_app/Components/products/product_grid_new.dart';
 import 'package:ecom_app/utils/ColorConstants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -352,6 +354,7 @@ class _HomeState extends State<Home> {
               ),
               HomeTopSlider(),
               CategoriesSlider(),
+              // Jeans Collections Row
               Row(
                 children: [
                   Expanded(
@@ -407,6 +410,65 @@ class _HomeState extends State<Home> {
                 ],
               ),
               ProductsGrid(),
+              SizedBox(height: 10.0,),
+              CashBackSlider(),
+              SizedBox(height: 10.0,),
+              // Salwar Collections Row
+              Row(
+                children: [
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Container(
+                        padding: EdgeInsets.all(10.0),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.only(
+                            topRight: Radius.circular(20.0),
+                          ),
+                          color: ColorConstants.primaryColor,
+                        ),
+                        child: Text(
+                          'Salwar Collections',
+                          style: GoogleFonts.lato(
+                              color: Colors.white, fontSize: 16.0),
+                        ),
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: InkWell(
+                          onTap: () {
+                            print('hiii');
+                          },
+                          child: RichText(
+                            text: TextSpan(
+                              children: [
+                                TextSpan(
+                                  text: "View More  ",
+                                  style: GoogleFonts.lato(
+                                      color: ColorConstants.primaryColorDark),
+                                ),
+                                WidgetSpan(
+                                  child: SvgPicture.asset(
+                                    'assets/svg-icon/right-arrow.svg',
+                                    width: 12,
+                                    height: 12,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              ProductsGridNew(),
             ],
           ),
         ),
