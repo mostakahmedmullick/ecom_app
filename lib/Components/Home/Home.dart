@@ -363,7 +363,7 @@ class _HomeState extends State<Home> {
                           borderRadius: BorderRadius.only(
                             topRight: Radius.circular(20.0),
                           ),
-                          color: ColorConstants.secondaryColor,
+                          color: ColorConstants.primaryColor,
                         ),
                         child: Text(
                           'Jeans Collections',
@@ -388,7 +388,7 @@ class _HomeState extends State<Home> {
                                 TextSpan(
                                   text: "View More  ",
                                   style: GoogleFonts.lato(
-                                      color: ColorConstants.primaryColor),
+                                      color: ColorConstants.primaryColorDark),
                                 ),
                                 WidgetSpan(
                                   child: SvgPicture.asset(
