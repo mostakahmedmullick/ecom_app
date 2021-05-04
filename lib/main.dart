@@ -1,4 +1,4 @@
-import 'package:ecom_app/Components/Home/Home.dart';
+import 'package:ecom_app/Components/home/home.dart';
 import 'package:ecom_app/utils/ColorConstants.dart';
 import 'package:ecom_app/utils/theme.dart';
 import 'package:flutter/material.dart';
