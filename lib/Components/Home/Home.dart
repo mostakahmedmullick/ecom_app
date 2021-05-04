@@ -1,10 +1,5 @@
 import 'package:badges/badges.dart';
-import 'package:ecom_app/Components/Home/CategoriesSlider.dart';
-import 'package:ecom_app/Components/Home/HomeTopSlider.dart';
-import 'package:ecom_app/Components/Home/cashback_slider.dart';
-import 'package:ecom_app/Components/home/home_page.dart';
-import 'package:ecom_app/Components/products/product_grid.dart';
-import 'package:ecom_app/Components/products/product_grid_new.dart';
+import 'package:ecom_app/Components/Home/home_page.dart';
 import 'package:ecom_app/utils/ColorConstants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';

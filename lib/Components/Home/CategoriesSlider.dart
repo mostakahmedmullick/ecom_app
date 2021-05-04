@@ -1,3 +1,4 @@
+import 'package:ecom_app/Components/products/product_category_wise.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -44,7 +45,10 @@ class CategoriesSlider extends StatelessWidget {
         itemBuilder: (BuildContext context, int index) {
           return InkWell(
             onTap: () {
-              print('he');
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ProductCategoryWise()),
+              );
             },
             child: Padding(
               padding: EdgeInsets.all(12.0),
