@@ -1,10 +1,10 @@
 import 'package:badges/badges.dart';
+import 'package:ecom_app/Components/products/filter_page.dart';
 import 'package:ecom_app/Components/products/product_grid.dart';
 import 'package:ecom_app/constants/products_constant.dart';
 import 'package:ecom_app/utils/ColorConstants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -108,7 +108,9 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
                         ),
                       ),
                       onTap: () {
-                        print('hii');
+                        setState(() {
+                          _visible = !_visible;
+                        });
                       },
                     ),
                   ),
@@ -135,9 +137,11 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
                         ),
                       ),
                       onTap: () {
-                        setState(() {
-                          _visible = true;
-                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => FilterPage()),
+                        );
                       },
                     ),
                   ),
@@ -147,7 +151,6 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
             SizedBox(
               height: 5.0,
             ),
-
             Flexible(
               child: GridView.builder(
                 itemCount: ProductConstants.jeansImg.length,
@@ -187,13 +190,14 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
             //             "Panel 1 This is the Widget behind the sliding panel")),
             //     borderRadius: radius,
             //   ),
-            // )
+            // ),
           ],
         ),
       ),
     );
   }
 
+  // Product Card Design
   Widget _productCardWidget(String img) {
     return Card(
       elevation: 0.6,
