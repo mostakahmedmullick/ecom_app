@@ -493,7 +493,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             children: [
                               Center(
                                 child: Image.network(
-                                  'https://rukminim1.flixcart.com/image/800/960/kbb49zk0/jean/p/g/p/32-bmw-darklevis-d-ben-martin-original-imafszrthheg5usf.jpeg?q=50',
+                                  'https://rukminim1.flixcart.com/image/800/960/k02qnww0/jean/z/z/z/38-fmjno0454-flying-machine-original-imafjs27y6eedvkz.jpeg?q=50',
                                   height: 100.0,
                                 ),
                               ),
