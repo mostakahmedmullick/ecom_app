@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:ecom_app/Components/products/filter_page.dart';
+import 'package:ecom_app/Components/products/product_details.dart';
 import 'package:ecom_app/Components/products/product_grid.dart';
 import 'package:ecom_app/constants/products_constant.dart';
 import 'package:ecom_app/utils/ColorConstants.dart';
@@ -139,8 +140,7 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => FilterPage()),
+                          MaterialPageRoute(builder: (context) => FilterPage()),
                         );
                       },
                     ),
@@ -199,158 +199,165 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
 
   // Product Card Design
   Widget _productCardWidget(String img) {
-    return Card(
-      elevation: 0.6,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(10), // if you need this
-        side: BorderSide(
-          color: Colors.grey.withOpacity(0.2),
-          // width: 1,
+    return GestureDetector(
+      onTap: () {
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => ProductDetails()));
+      },
+      child: Card(
+        elevation: 0.6,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10), // if you need this
+          side: BorderSide(
+            color: Colors.grey.withOpacity(0.2),
+            // width: 1,
+          ),
         ),
-      ),
-      child: Padding(
-        padding: EdgeInsets.only(top: 10.0, right: 5.0, bottom: 5.0, left: 5.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Stack(
-              children: [
-                Center(
-                  child: Image.network(
-                    img,
-                    height: 200.0,
+        child: Padding(
+          padding:
+              EdgeInsets.only(top: 10.0, right: 5.0, bottom: 5.0, left: 5.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Stack(
+                children: [
+                  Center(
+                    child: Image.network(
+                      img,
+                      height: 200.0,
+                    ),
                   ),
-                ),
-                Positioned(
-                  child: ClipPath(
-                    clipper: StarClipper(14),
-                    child: Container(
-                      height: 50,
-                      width: 50,
-                      color: Color(0xFFF54911),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Center(
-                          child: Text(
-                            "30% OFF",
-                            style: GoogleFonts.lato(
-                              color: Colors.white,
-                              fontSize: 12.0,
+                  Positioned(
+                    child: ClipPath(
+                      clipper: StarClipper(14),
+                      child: Container(
+                        height: 50,
+                        width: 50,
+                        color: Color(0xFFF54911),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Center(
+                            child: Text(
+                              "30% OFF",
+                              style: GoogleFonts.lato(
+                                color: Colors.white,
+                                fontSize: 12.0,
+                              ),
+                              maxLines: 2,
+                              textAlign: TextAlign.center,
                             ),
-                            maxLines: 2,
-                            textAlign: TextAlign.center,
                           ),
                         ),
                       ),
                     ),
+                    left: 0.0,
+                    top: 0.0,
                   ),
-                  left: 0.0,
-                  top: 0.0,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 5.0,
-            ),
-            // ignore: missing_required_param
-            RatingBar(
-              initialRating: 4.5,
-              itemSize: 12.0,
-              minRating: 4,
-              direction: Axis.horizontal,
-              allowHalfRating: true,
-              itemCount: 5,
-              unratedColor: Color(0xFFE1E1E1),
-              itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
-              ratingWidget: RatingWidget(
-                full: SvgPicture.asset(
-                  'assets/svg-icon/rating.svg',
-                ),
-                half: SvgPicture.asset(
-                  'assets/svg-icon/rating-half.svg',
-                ),
-                empty: SvgPicture.asset(
-                  'assets/svg-icon/rating-empty.svg',
-                ),
+                ],
               ),
-              // itemBuilder: (context, _) => Icon(
-              //   Icons.star,
-              //   color: Colors.amber,
-              // ),
-              // onRatingUpdate: (rating) {},
-            ),
-            Divider(
-              color: Color(0xFFE1E1E1),
-            ),
-            Text(
-              'Regular Men Blue Jeans Color Gray',
-              style: GoogleFonts.lato(),
-              maxLines: 2,
-              textAlign: TextAlign.center,
-              overflow: TextOverflow.ellipsis,
-            ),
-            Divider(
-              color: Color(0xFFE1E1E1),
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    'MRP \u{20B9}560',
-                    style: GoogleFonts.lato(
-                      decoration: TextDecoration.lineThrough,
-                      color: Color(
-                        0xFF8B8B8B,
-                      ),
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.left,
+              SizedBox(
+                height: 5.0,
+              ),
+              // ignore: missing_required_param
+              RatingBar(
+                initialRating: 4.5,
+                itemSize: 12.0,
+                minRating: 4,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                unratedColor: Color(0xFFE1E1E1),
+                itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
+                ratingWidget: RatingWidget(
+                  full: SvgPicture.asset(
+                    'assets/svg-icon/rating.svg',
+                  ),
+                  half: SvgPicture.asset(
+                    'assets/svg-icon/rating-half.svg',
+                  ),
+                  empty: SvgPicture.asset(
+                    'assets/svg-icon/rating-empty.svg',
                   ),
                 ),
-                Expanded(
-                  child: Text(
-                    '\u{20B9}450',
-                    style: GoogleFonts.lato(
-                      fontWeight: FontWeight.bold,
-                      color: ColorConstants.primaryColorDark,
-                    ),
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    textAlign: TextAlign.right,
-                  ),
-                ),
-              ],
-            ),
-            Center(
-              child: ElevatedButton(
-                child: RichText(
-                  text: TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "ADD TO CART  ",
-                        style: GoogleFonts.lato(),
-                      ),
-                      WidgetSpan(
-                        child: SvgPicture.asset(
-                          'assets/svg-icon/cart-white.svg',
-                          width: 15,
-                          height: 15,
+                // itemBuilder: (context, _) => Icon(
+                //   Icons.star,
+                //   color: Colors.amber,
+                // ),
+                // onRatingUpdate: (rating) {},
+              ),
+              Divider(
+                color: Color(0xFFE1E1E1),
+              ),
+              Text(
+                'Regular Men Blue Jeans Color Gray',
+                style: GoogleFonts.lato(),
+                maxLines: 2,
+                textAlign: TextAlign.center,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Divider(
+                color: Color(0xFFE1E1E1),
+              ),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text(
+                      'MRP \u{20B9}560',
+                      style: GoogleFonts.lato(
+                        decoration: TextDecoration.lineThrough,
+                        color: Color(
+                          0xFF8B8B8B,
                         ),
                       ),
-                    ],
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.left,
+                    ),
                   ),
-                ),
-                style: ElevatedButton.styleFrom(
-                  elevation: 0.0,
-                  primary: ColorConstants.secondaryColor,
-                ),
-                onPressed: () {
-                  print('hy');
-                },
+                  Expanded(
+                    child: Text(
+                      '\u{20B9}450',
+                      style: GoogleFonts.lato(
+                        fontWeight: FontWeight.bold,
+                        color: ColorConstants.primaryColorDark,
+                      ),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.right,
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ],
+              Center(
+                child: ElevatedButton(
+                  child: RichText(
+                    text: TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "ADD TO CART  ",
+                          style: GoogleFonts.lato(),
+                        ),
+                        WidgetSpan(
+                          child: SvgPicture.asset(
+                            'assets/svg-icon/cart-white.svg',
+                            width: 15,
+                            height: 15,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    elevation: 0.0,
+                    primary: ColorConstants.secondaryColor,
+                  ),
+                  onPressed: () {
+                    print('hy');
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

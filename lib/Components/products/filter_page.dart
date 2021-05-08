@@ -12,11 +12,13 @@ class FilterPage extends StatefulWidget {
 class _FilterPageState extends State<FilterPage> {
   List<String> _filterList = [
     'Brand',
-    'Product Rating',
+    'Rating',
     'Price',
-    'Pack Size',
+    'Size',
     'Discount'
   ];
+
+  bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -64,9 +66,9 @@ class _FilterPageState extends State<FilterPage> {
       body: Container(
         child: Row(
           children: [
-            Expanded(
+            Expanded(              
               child: Container(
-                color: Colors.amber,
+                color: Color(0xFFF1F1F1),
                 child: Column(
                   children: [
                     Flexible(
@@ -74,13 +76,24 @@ class _FilterPageState extends State<FilterPage> {
                       child: ListView.builder(
                         itemCount: _filterList.length,
                         itemBuilder: (BuildContext context, int index) {
-                          return ListTile(
-                            // trailing: Text(
-                            //   "GFG",
-                            //   style: TextStyle(color: Colors.green, fontSize: 15),
-                            // ),
-                            title: Text(_filterList[index]),
-                            onTap: () {},
+                          return Material(
+                            color: Colors.transparent,
+                            child: ListTile(
+                              // selectedTileColor: Colors.amber,
+                              // selected: _isSelected,
+                              trailing: SvgPicture.asset(
+                                'assets/svg-icon/right-arrow.svg',
+                                height: 15,
+                                width: 15,
+                              ),
+                              title: Text(
+                                _filterList[index],
+                                style: GoogleFonts.lato(fontSize: 14.0),
+                              ),
+                              onTap: () {
+                                
+                              },
+                            ),
                           );
                         },
                       ),
@@ -92,8 +105,7 @@ class _FilterPageState extends State<FilterPage> {
                 ),
               ),
             ),
-            Expanded(
-              flex: 2,
+            Expanded(              
               child: Text('test'),
             ),
           ],
