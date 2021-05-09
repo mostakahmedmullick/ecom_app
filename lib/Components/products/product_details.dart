@@ -55,11 +55,13 @@ class _ProductDetailsState extends State<ProductDetails> {
         ],
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ProductImageSlider(),
-            Text('hiiii'),
-          ],
+        child: Container(
+          child: Column(
+            children: [
+              ProductImageSlider(),
+              Text('hiiii'),
+            ],
+          ),
         ),
       ),
     );
