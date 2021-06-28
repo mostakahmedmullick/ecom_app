@@ -1,5 +1,5 @@
 import 'package:badges/badges.dart';
-import 'package:ecom_app/utils/ColorConstants.dart';
+import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,7 +18,7 @@ class _FilterPageState extends State<FilterPage> {
     'Discount'
   ];
 
-  bool _isSelected = false;
+  // bool _isSelected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +27,7 @@ class _FilterPageState extends State<FilterPage> {
       appBar: AppBar(
         leading: IconButton(
           icon: SvgPicture.asset(
-            'assets/svg-icon/close.svg',
+            'assets/svg-icons/close.svg',
             height: 15,
             width: 15,
           ),
@@ -48,11 +48,11 @@ class _FilterPageState extends State<FilterPage> {
               '5',
               style: GoogleFonts.lato(color: Colors.white),
             ),
-            badgeColor: ColorConstants.secondaryColor,
+            badgeColor: AppColorConstants.secondaryColor,
             elevation: 0.0,
             child: IconButton(
               icon: SvgPicture.asset(
-                'assets/svg-icon/appbar-cart.svg',
+                'assets/svg-icons/appbar-cart.svg',
                 height: 20,
                 width: 15,
               ),
@@ -82,7 +82,7 @@ class _FilterPageState extends State<FilterPage> {
                               // selectedTileColor: Colors.amber,
                               // selected: _isSelected,
                               trailing: SvgPicture.asset(
-                                'assets/svg-icon/right-arrow.svg',
+                                'assets/svg-icons/right-arrow.svg',
                                 height: 15,
                                 width: 15,
                               ),

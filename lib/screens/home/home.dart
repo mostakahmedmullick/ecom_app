@@ -1,14 +1,13 @@
 import 'package:badges/badges.dart';
-import 'package:ecom_app/Components/Home/home_page.dart';
-import 'package:ecom_app/utils/ColorConstants.dart';
+import 'package:ecom_app/screens/home/home_page.dart';
+import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Home extends StatefulWidget {
-  Home({Key key, this.title}) : super(key: key);
-
   final String title;
+  Home({Key? key, required this.title}) : super(key: key);
 
   @override
   _HomeState createState() => _HomeState();
@@ -57,11 +56,11 @@ class _HomeState extends State<Home> {
               '5',
               style: GoogleFonts.lato(color: Colors.white),
             ),
-            badgeColor: ColorConstants.secondaryColor,
+            badgeColor: AppColorConstants.secondaryColor,
             elevation: 0.0,
             child: IconButton(
               icon: SvgPicture.asset(
-                'assets/svg-icon/appbar-cart.svg',
+                'assets/svg-icons/appbar-cart.svg',
                 height: 20,
                 width: 15,
               ),
@@ -110,7 +109,7 @@ class _HomeState extends State<Home> {
                   ],
                 ),
                 decoration: BoxDecoration(
-                  color: ColorConstants.primaryColor,
+                  color: AppColorConstants.primaryColor,
                 ),
               ),
             ),
@@ -120,7 +119,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/my-order.svg',
+                  'assets/svg-icons/my-order.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -128,7 +127,7 @@ class _HomeState extends State<Home> {
               trailing: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/right-arrow.svg',
+                  'assets/svg-icons/right-arrow.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -147,7 +146,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/cart.svg',
+                  'assets/svg-icons/cart.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -155,7 +154,7 @@ class _HomeState extends State<Home> {
               trailing: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/right-arrow.svg',
+                  'assets/svg-icons/right-arrow.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -174,7 +173,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/wishlist.svg',
+                  'assets/svg-icons/wishlist.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -182,7 +181,7 @@ class _HomeState extends State<Home> {
               trailing: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/right-arrow.svg',
+                  'assets/svg-icons/right-arrow.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -201,7 +200,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/account.svg',
+                  'assets/svg-icons/account.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -209,7 +208,7 @@ class _HomeState extends State<Home> {
               trailing: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/right-arrow.svg',
+                  'assets/svg-icons/right-arrow.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -228,7 +227,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/notification.svg',
+                  'assets/svg-icons/notification.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -247,7 +246,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/note.svg',
+                  'assets/svg-icons/note.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -266,7 +265,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/about.svg',
+                  'assets/svg-icons/about.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -285,7 +284,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/location.svg',
+                  'assets/svg-icons/location.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -304,7 +303,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/help.svg',
+                  'assets/svg-icons/help.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -323,7 +322,7 @@ class _HomeState extends State<Home> {
               leading: SizedBox(
                 width: 20.0,
                 child: SvgPicture.asset(
-                  'assets/svg-icon/power.svg',
+                  'assets/svg-icons/power.svg',
                   height: 20,
                   width: 15,
                 ),
@@ -344,7 +343,7 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
             icon: Padding(
               child: SvgPicture.asset(
-                'assets/svg-icon/home.svg',
+                'assets/svg-icons/home.svg',
                 height: 20,
                 width: 15,
               ),
@@ -356,7 +355,7 @@ class _HomeState extends State<Home> {
             icon: Padding(
               padding: const EdgeInsets.only(bottom: 5.0),
               child: SvgPicture.asset(
-                'assets/svg-icon/wishlist-dark.svg',
+                'assets/svg-icons/wishlist-dark.svg',
                 height: 20,
                 width: 15,
               ),
@@ -367,7 +366,7 @@ class _HomeState extends State<Home> {
             icon: Padding(
               padding: const EdgeInsets.only(bottom: 5.0),
               child: SvgPicture.asset(
-                'assets/svg-icon/menu-cate.svg',
+                'assets/svg-icons/menu-cate.svg',
                 height: 18,
                 width: 15,
               ),
@@ -378,7 +377,7 @@ class _HomeState extends State<Home> {
             icon: Padding(
               padding: const EdgeInsets.only(bottom: 5.0),
               child: SvgPicture.asset(
-                'assets/svg-icon/account-dark.svg',
+                'assets/svg-icons/account-dark.svg',
                 height: 20,
                 width: 15,
               ),
@@ -387,11 +386,11 @@ class _HomeState extends State<Home> {
           ),
         ],
         currentIndex: _selectedIndex,
-        backgroundColor: ColorConstants.primaryColor,
+        backgroundColor: AppColorConstants.primaryColor,
         type: BottomNavigationBarType.fixed,
         selectedFontSize: 14,
         unselectedFontSize: 14,
-        unselectedItemColor: ColorConstants.primaryColorDark,
+        unselectedItemColor: AppColorConstants.primaryColorDark,
         selectedItemColor: Colors.white,
         selectedLabelStyle: GoogleFonts.lato(fontWeight: FontWeight.w500),
         unselectedLabelStyle: GoogleFonts.lato(fontWeight: FontWeight.w500),

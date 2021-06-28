@@ -1,17 +1,17 @@
 import 'package:ecom_app/constants/products_constant.dart';
-import 'package:ecom_app/utils/ColorConstants.dart';
+import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:math' as math;
 
-class ProductsGrid extends StatefulWidget {
+class ProductsGridNew extends StatefulWidget {
   @override
-  _ProductsGridState createState() => _ProductsGridState();
+  _ProductsGridNewState createState() => _ProductsGridNewState();
 }
 
-class _ProductsGridState extends State<ProductsGrid> {
+class _ProductsGridNewState extends State<ProductsGridNew> {
   List<String> images = ProductConstants.jeansImg;
 
   @override
@@ -36,7 +36,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             children: [
                               Center(
                                 child: Image.network(
-                                  'https://rukminim1.flixcart.com/image/800/960/kk2wl8w0/jean/0/f/h/36-r1101-rasso-original-imafzgbhbgufmfmu.jpeg?q=50',
+                                  'https://rukminim1.flixcart.com/image/800/960/juyev0w0/kurta/g/z/d/3xl-jne3291-kr-janasya-original-imaffxuhfs4cykus.jpeg?q=50',
                                   height: 100.0,
                                 ),
                               ),
@@ -71,7 +71,6 @@ class _ProductsGridState extends State<ProductsGrid> {
                           SizedBox(
                             height: 5.0,
                           ),
-                          // ignore: missing_required_param
                           RatingBar(
                             initialRating: 4.5,
                             itemSize: 12.0,
@@ -83,15 +82,16 @@ class _ProductsGridState extends State<ProductsGrid> {
                             itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
                             ratingWidget: RatingWidget(
                               full: SvgPicture.asset(
-                                'assets/svg-icon/rating.svg',
+                                'assets/svg-icons/rating.svg',
                               ),
                               half: SvgPicture.asset(
-                                'assets/svg-icon/rating-half.svg',
+                                'assets/svg-icons/rating-half.svg',
                               ),
                               empty: SvgPicture.asset(
-                                'assets/svg-icon/rating-empty.svg',
+                                'assets/svg-icons/rating-empty.svg',
                               ),
                             ),
+                            onRatingUpdate: (double value) {},
                             // itemBuilder: (context, _) => Icon(
                             //   Icons.star,
                             //   color: Colors.amber,
@@ -102,7 +102,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             color: Color(0xFFE1E1E1),
                           ),
                           Text(
-                            'Regular Men Blue Jeans Color Gray',
+                            'Women Block Print, Geometric Print, Printed',
                             style: GoogleFonts.lato(),
                             maxLines: 2,
                             textAlign: TextAlign.center,
@@ -132,7 +132,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                                   '\u{20B9}450',
                                   style: GoogleFonts.lato(
                                     fontWeight: FontWeight.bold,
-                                    color: ColorConstants.primaryColorDark,
+                                    color: AppColorConstants.primaryColorDark,
                                   ),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
@@ -152,7 +152,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                                     ),
                                     WidgetSpan(
                                       child: SvgPicture.asset(
-                                        'assets/svg-icon/cart-white.svg',
+                                        'assets/svg-icons/cart-white.svg',
                                         width: 15,
                                         height: 15,
                                       ),
@@ -162,7 +162,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                               ),
                               style: ElevatedButton.styleFrom(
                                 elevation: 0.0,
-                                primary: ColorConstants.secondaryColor,
+                                primary: AppColorConstants.secondaryColor,
                               ),
                               onPressed: () {
                                 print('hy');
@@ -186,7 +186,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             children: [
                               Center(
                                 child: Image.network(
-                                  'https://rukminim1.flixcart.com/image/800/960/j6gs6fk0/jean/n/h/z/40-jog-hps-black-urbano-fashion-original-imaewxe7fgyx7u28.jpeg?q=50',
+                                  'https://rukminim1.flixcart.com/image/800/960/kfr5le80-0/kurta/j/d/n/l-316k711-saara-original-imafw56vvrkhzt74.jpeg?q=50',
                                   height: 100.0,
                                 ),
                               ),
@@ -221,7 +221,6 @@ class _ProductsGridState extends State<ProductsGrid> {
                           SizedBox(
                             height: 5.0,
                           ),
-                          // ignore: missing_required_param
                           RatingBar(
                             initialRating: 4.5,
                             itemSize: 12.0,
@@ -233,15 +232,15 @@ class _ProductsGridState extends State<ProductsGrid> {
                             itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
                             ratingWidget: RatingWidget(
                               full: SvgPicture.asset(
-                                'assets/svg-icon/rating.svg',
+                                'assets/svg-icons/rating.svg',
                               ),
                               half: SvgPicture.asset(
-                                'assets/svg-icon/rating-half.svg',
+                                'assets/svg-icons/rating-half.svg',
                               ),
                               empty: SvgPicture.asset(
-                                'assets/svg-icon/rating-empty.svg',
+                                'assets/svg-icons/rating-empty.svg',
                               ),
-                            ),
+                            ), onRatingUpdate: (double value) {  },
                             // itemBuilder: (context, _) => Icon(
                             //   Icons.star,
                             //   color: Colors.amber,
@@ -252,7 +251,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             color: Color(0xFFE1E1E1),
                           ),
                           Text(
-                            'Regular Men Blue Jeans Color Gray',
+                            'Women Block Print, Geometric Print, Printed',
                             style: GoogleFonts.lato(),
                             maxLines: 2,
                             textAlign: TextAlign.center,
@@ -282,7 +281,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                                   '\u{20B9}450',
                                   style: GoogleFonts.lato(
                                     fontWeight: FontWeight.bold,
-                                    color: ColorConstants.primaryColorDark,
+                                    color: AppColorConstants.primaryColorDark,
                                   ),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
@@ -302,7 +301,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                                     ),
                                     WidgetSpan(
                                       child: SvgPicture.asset(
-                                        'assets/svg-icon/cart-white.svg',
+                                        'assets/svg-icons/cart-white.svg',
                                         width: 15,
                                         height: 15,
                                       ),
@@ -312,7 +311,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                               ),
                               style: ElevatedButton.styleFrom(
                                 elevation: 0.0,
-                                primary: ColorConstants.secondaryColor,
+                                primary: AppColorConstants.secondaryColor,
                               ),
                               onPressed: () {
                                 print('hy');
@@ -343,7 +342,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             children: [
                               Center(
                                 child: Image.network(
-                                  'https://rukminim1.flixcart.com/image/800/960/jydaqa80/jean/g/z/h/38-epssprcrs-lblue-urbano-fashion-original-imafgmhbhhgnucwa.jpeg?q=50',
+                                  'https://rukminim1.flixcart.com/image/800/960/km6mxe80/ethnic-set/7/q/d/xxl-jef-rbd-814-jaffry-embroidery-original-imagf5a5hgqzzfzw.jpeg?q=50',
                                   height: 100.0,
                                 ),
                               ),
@@ -378,7 +377,6 @@ class _ProductsGridState extends State<ProductsGrid> {
                           SizedBox(
                             height: 5.0,
                           ),
-                          // ignore: missing_required_param
                           RatingBar(
                             initialRating: 4.5,
                             itemSize: 12.0,
@@ -390,15 +388,16 @@ class _ProductsGridState extends State<ProductsGrid> {
                             itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
                             ratingWidget: RatingWidget(
                               full: SvgPicture.asset(
-                                'assets/svg-icon/rating.svg',
+                                'assets/svg-icons/rating.svg',
                               ),
                               half: SvgPicture.asset(
-                                'assets/svg-icon/rating-half.svg',
+                                'assets/svg-icons/rating-half.svg',
                               ),
                               empty: SvgPicture.asset(
-                                'assets/svg-icon/rating-empty.svg',
+                                'assets/svg-icons/rating-empty.svg',
                               ),
                             ),
+                            onRatingUpdate: (double value) {},
                             // itemBuilder: (context, _) => Icon(
                             //   Icons.star,
                             //   color: Colors.amber,
@@ -409,7 +408,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             color: Color(0xFFE1E1E1),
                           ),
                           Text(
-                            'Regular Men Blue Jeans Color Gray',
+                            'Women Block Print, Geometric Print, Printed',
                             style: GoogleFonts.lato(),
                             maxLines: 2,
                             textAlign: TextAlign.center,
@@ -439,7 +438,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                                   '\u{20B9}450',
                                   style: GoogleFonts.lato(
                                     fontWeight: FontWeight.bold,
-                                    color: ColorConstants.primaryColorDark,
+                                    color: AppColorConstants.primaryColorDark,
                                   ),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
@@ -459,7 +458,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                                     ),
                                     WidgetSpan(
                                       child: SvgPicture.asset(
-                                        'assets/svg-icon/cart-white.svg',
+                                        'assets/svg-icons/cart-white.svg',
                                         width: 15,
                                         height: 15,
                                       ),
@@ -469,7 +468,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                               ),
                               style: ElevatedButton.styleFrom(
                                 elevation: 0.0,
-                                primary: ColorConstants.secondaryColor,
+                                primary: AppColorConstants.secondaryColor,
                               ),
                               onPressed: () {
                                 print('hy');
@@ -493,7 +492,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             children: [
                               Center(
                                 child: Image.network(
-                                  'https://rukminim1.flixcart.com/image/800/960/k02qnww0/jean/z/z/z/38-fmjno0454-flying-machine-original-imafjs27y6eedvkz.jpeg?q=50',
+                                  'https://rukminim1.flixcart.com/image/800/960/k5msb680/kurta/2/q/j/xl-294k528-saara-original-imafz9sxdrzugfck.jpeg?q=50',
                                   height: 100.0,
                                 ),
                               ),
@@ -528,7 +527,6 @@ class _ProductsGridState extends State<ProductsGrid> {
                           SizedBox(
                             height: 5.0,
                           ),
-                          // ignore: missing_required_param
                           RatingBar(
                             initialRating: 4.5,
                             itemSize: 12.0,
@@ -540,15 +538,16 @@ class _ProductsGridState extends State<ProductsGrid> {
                             itemPadding: EdgeInsets.symmetric(horizontal: 2.0),
                             ratingWidget: RatingWidget(
                               full: SvgPicture.asset(
-                                'assets/svg-icon/rating.svg',
+                                'assets/svg-icons/rating.svg',
                               ),
                               half: SvgPicture.asset(
-                                'assets/svg-icon/rating-half.svg',
+                                'assets/svg-icons/rating-half.svg',
                               ),
                               empty: SvgPicture.asset(
-                                'assets/svg-icon/rating-empty.svg',
+                                'assets/svg-icons/rating-empty.svg',
                               ),
                             ),
+                            onRatingUpdate: (double value) {},
                             // itemBuilder: (context, _) => Icon(
                             //   Icons.star,
                             //   color: Colors.amber,
@@ -559,7 +558,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                             color: Color(0xFFE1E1E1),
                           ),
                           Text(
-                            'Regular Men Blue Jeans Color Gray',
+                            'Women Block Print, Geometric Print, Printed',
                             style: GoogleFonts.lato(),
                             maxLines: 2,
                             textAlign: TextAlign.center,
@@ -589,7 +588,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                                   '\u{20B9}450',
                                   style: GoogleFonts.lato(
                                     fontWeight: FontWeight.bold,
-                                    color: ColorConstants.primaryColorDark,
+                                    color: AppColorConstants.primaryColorDark,
                                   ),
                                   maxLines: 2,
                                   overflow: TextOverflow.ellipsis,
@@ -609,7 +608,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                                     ),
                                     WidgetSpan(
                                       child: SvgPicture.asset(
-                                        'assets/svg-icon/cart-white.svg',
+                                        'assets/svg-icons/cart-white.svg',
                                         width: 15,
                                         height: 15,
                                       ),
@@ -619,7 +618,7 @@ class _ProductsGridState extends State<ProductsGrid> {
                               ),
                               style: ElevatedButton.styleFrom(
                                 elevation: 0.0,
-                                primary: ColorConstants.secondaryColor,
+                                primary: AppColorConstants.secondaryColor,
                               ),
                               onPressed: () {
                                 print('hy');
@@ -655,7 +654,7 @@ class StarClipper extends CustomClipper<Path> {
 
     double radius = halfWidth / 1.3;
 
-    double degreesPerStep = _degToRad(360 / numberOfPoints);
+    num degreesPerStep = _degToRad(360 / numberOfPoints);
 
     double halfDegreesPerStep = degreesPerStep / 2;
 

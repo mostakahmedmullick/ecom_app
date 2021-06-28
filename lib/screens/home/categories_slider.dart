@@ -1,22 +1,22 @@
-import 'package:ecom_app/Components/products/product_category_wise.dart';
+import 'package:ecom_app/screens/products/product_category_wise.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CategoriesSlider extends StatelessWidget {
   final List<String> imgList = [
-    'assets/svg-icon/bussiness-man.svg',
-    'assets/svg-icon/woman.svg',
-    'assets/svg-icon/baby-boy.svg',
-    'assets/svg-icon/jeans.svg',
-    'assets/svg-icon/shirt.svg',
-    'assets/svg-icon/cloth.svg',
-    'assets/svg-icon/dress.svg',
-    'assets/svg-icon/fork.svg',
-    'assets/svg-icon/girl.svg',
-    'assets/svg-icon/trousers.svg',
-    'assets/svg-icon/socks.svg',
-    'assets/svg-icon/cloth.svg',
+    'assets/svg-icons/bussiness-man.svg',
+    'assets/svg-icons/woman.svg',
+    'assets/svg-icons/baby-boy.svg',
+    'assets/svg-icons/jeans.svg',
+    'assets/svg-icons/shirt.svg',
+    'assets/svg-icons/cloth.svg',
+    'assets/svg-icons/dress.svg',
+    'assets/svg-icons/fork.svg',
+    'assets/svg-icons/girl.svg',
+    'assets/svg-icons/trousers.svg',
+    'assets/svg-icons/socks.svg',
+    'assets/svg-icons/cloth.svg',
   ];
 
   final List<String> cateTxt = [

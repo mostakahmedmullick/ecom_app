@@ -1,9 +1,9 @@
-import 'package:ecom_app/Components/Home/CategoriesSlider.dart';
-import 'package:ecom_app/Components/Home/HomeTopSlider.dart';
-import 'package:ecom_app/Components/Home/cashback_slider.dart';
-import 'package:ecom_app/Components/products/product_grid.dart';
-import 'package:ecom_app/Components/products/product_grid_new.dart';
-import 'package:ecom_app/utils/ColorConstants.dart';
+import 'package:ecom_app/screens/home/categories_slider.dart';
+import 'package:ecom_app/screens/home/home_top_slider.dart';
+import 'package:ecom_app/screens/Home/cashback_slider.dart';
+import 'package:ecom_app/screens/products/product_grid.dart';
+import 'package:ecom_app/screens/products/product_grid_new.dart';
+import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
       child: Column(
         children: [
           Container(
-            decoration: BoxDecoration(color: ColorConstants.primaryColor),
+            decoration: BoxDecoration(color: AppColorConstants.primaryColor),
             padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 15.0),
             child: SizedBox(
               child: TextField(
@@ -54,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20.0),
                       ),
-                      color: ColorConstants.primaryColor,
+                      color: AppColorConstants.primaryColor,
                     ),
                     child: Text(
                       'Jeans Collections',
@@ -79,11 +79,11 @@ class _HomePageState extends State<HomePage> {
                             TextSpan(
                               text: "View More  ",
                               style: GoogleFonts.lato(
-                                  color: ColorConstants.primaryColorDark),
+                                  color: AppColorConstants.primaryColorDark),
                             ),
                             WidgetSpan(
                               child: SvgPicture.asset(
-                                'assets/svg-icon/right-arrow.svg',
+                                'assets/svg-icons/right-arrow.svg',
                                 width: 12,
                                 height: 12,
                               ),
@@ -117,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                       borderRadius: BorderRadius.only(
                         topRight: Radius.circular(20.0),
                       ),
-                      color: ColorConstants.primaryColor,
+                      color: AppColorConstants.primaryColor,
                     ),
                     child: Text(
                       'Salwar Collections',
@@ -142,11 +142,11 @@ class _HomePageState extends State<HomePage> {
                             TextSpan(
                               text: "View More  ",
                               style: GoogleFonts.lato(
-                                  color: ColorConstants.primaryColorDark),
+                                  color: AppColorConstants.primaryColorDark),
                             ),
                             WidgetSpan(
                               child: SvgPicture.asset(
-                                'assets/svg-icon/right-arrow.svg',
+                                'assets/svg-icons/right-arrow.svg',
                                 width: 12,
                                 height: 12,
                               ),
