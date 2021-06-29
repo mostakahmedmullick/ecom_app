@@ -67,7 +67,7 @@ class _ProductImageSliderState extends State<ProductImageSlider> {
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: _current == index
-                          ? AppColorConstants.primaryColor
+                          ? AppColorConstants.secondaryColor
                           : Color.fromRGBO(0, 0, 0, 0.4)),
                 );
               },

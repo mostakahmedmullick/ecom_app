@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:ecom_app/screens/products/product_image_slider.dart';
+import 'package:ecom_app/screens/products/product_related.dart';
 import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -66,10 +67,12 @@ class _ProductDetailsState extends State<ProductDetails> {
           children: [
             Expanded(
               child: SingleChildScrollView(
+                // physics: ScrollPhysics(),
                 child: Container(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.start,
+                    // mainAxisSize: MainAxisSize.min,
                     children: [
                       // Product Image slider
                       Container(
@@ -229,7 +232,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       style: TextButton.styleFrom(
                                         primary: Colors.white,
                                         backgroundColor:
-                                            AppColorConstants.primaryColorDark,
+                                            AppColorConstants.secondaryColor,
                                         onSurface: Colors.grey,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
@@ -254,7 +257,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                           border: Border.symmetric(
                                               horizontal: BorderSide(
                                                   color: AppColorConstants
-                                                      .primaryColorDark,
+                                                      .secondaryColor,
                                                   width: 1.5))),
                                       child: Text(
                                         "1",
@@ -275,7 +278,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       style: TextButton.styleFrom(
                                         primary: Colors.white,
                                         backgroundColor:
-                                            AppColorConstants.primaryColorDark,
+                                            AppColorConstants.secondaryColor,
                                         onSurface: Colors.grey,
                                         shape: RoundedRectangleBorder(
                                           borderRadius: BorderRadius.only(
@@ -335,7 +338,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
                                         elevation: 0.0,
-                                        primary: AppColorConstants.primaryColor,
+                                        primary: AppColorConstants.primaryColorDark,
                                       ),
                                       child: Text(
                                         "CHECK",
@@ -349,19 +352,65 @@ class _ProductDetailsState extends State<ProductDetails> {
                           ],
                         ),
                       ),
+                      SizedBox(
+                        height: 4.0,
+                      ),
+                      // Product Description
+                      buildProductDesription(context),
+                      SizedBox(
+                        height: 4.0,
+                      ),
+                      // Product Specifications
+                      buildProductSpecifications(context),
+                      SizedBox(
+                        height: 4.0,
+                      ),
+                      // Product Ratings & Reviews
+                      buildProductRatingsReviews(context),
+                      SizedBox(
+                        height: 4.0,
+                      ),
+                      // Related Products
+                      Container(
+                        decoration: BoxDecoration(color: Colors.white),
+                        width: MediaQuery.of(context).size.width,
+                        padding: const EdgeInsets.symmetric(vertical: 12.0),
+                        child: Column(
+                          // crossAxisAlignment: CrossAxisAlignment.start,
+                          // mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                                                          child: Container(
+                                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.only(
+                                    topRight: Radius.circular(20.0),
+                                  ),
+                                  color: AppColorConstants.primaryColor,
+                                ),
+                                child: Text(
+                                  "Related Products",
+                                  style: GoogleFonts.lato(
+                                      color: Colors.white, fontSize: 16.0),
+                                ),
+                              ),
+                            ),
+                            SizedBox(height: 315.0,child: ProductRelated()),
+                          ],
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ),
             ),
+            // Bottom Cart and buy button
             Container(
               width: MediaQuery.of(context).size.width,
-              // padding: const EdgeInsets.all(0.0),
-              // margin: const EdgeInsets.all(0.0),
               child: Row(
-                // crossAxisAlignment: CrossAxisAlignment.stretch,
-                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
+                  // add to cart button
                   Expanded(
                     flex: 1,
                     child: SizedBox(
@@ -382,6 +431,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                       ),
                     ),
                   ),
+                  // Buy now button
                   Expanded(
                     flex: 1,
                     child: SizedBox(
@@ -411,6 +461,102 @@ class _ProductDetailsState extends State<ProductDetails> {
     );
   }
 
+  Widget buildProductDesription(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          // Description title
+          Text(
+            "Description",
+            style: GoogleFonts.lato(
+              fontSize: 18.0,
+              color: AppColorConstants.primaryColorDark,
+            ),
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          // Description
+          Text(
+            "Slim Men Dark Blue Jeans Slim Men Dark Blue Jeans",
+            style: GoogleFonts.lato(
+              color: AppColorConstants.fontColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildProductSpecifications(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          // Specifications title
+          Text(
+            "Specifications",
+            style: GoogleFonts.lato(
+              fontSize: 18.0,
+              color: AppColorConstants.primaryColorDark,
+            ),
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          // Specifications
+          Text(
+            "Product Specifications",
+            style: GoogleFonts.lato(
+              color: AppColorConstants.fontColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget buildProductRatingsReviews(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: Colors.white),
+      width: MediaQuery.of(context).size.width,
+      padding: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          // Ratings & Reviews title
+          Text(
+            "Ratings & Reviews",
+            style: GoogleFonts.lato(
+              fontSize: 18.0,
+              color: AppColorConstants.primaryColorDark,
+            ),
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          // Ratings & Reviews
+          Text(
+            "Product Ratings & Reviews",
+            style: GoogleFonts.lato(
+              color: AppColorConstants.fontColor,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget buildSizeWrap() {
     return Wrap(
       crossAxisAlignment: WrapCrossAlignment.start,
@@ -423,7 +569,7 @@ class _ProductDetailsState extends State<ProductDetails> {
             side: BorderSide(
               width: 2.0,
               color: _currectSize == index
-                  ? AppColorConstants.primaryColor
+                  ? AppColorConstants.secondaryColor
                   : Color(0xFFF0F0F0),
             ),
             borderRadius: BorderRadius.circular(5.0),
@@ -444,7 +590,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                     size,
                     style: GoogleFonts.lato(
                       color: _currectSize == index
-                          ? AppColorConstants.primaryColor
+                          ? AppColorConstants.secondaryColor
                           : Color(0xFF000000),
                     ),
                   ),
