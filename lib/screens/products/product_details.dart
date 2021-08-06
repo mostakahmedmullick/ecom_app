@@ -338,7 +338,8 @@ class _ProductDetailsState extends State<ProductDetails> {
                                       onPressed: () {},
                                       style: ElevatedButton.styleFrom(
                                         elevation: 0.0,
-                                        primary: AppColorConstants.primaryColorDark,
+                                        primary:
+                                            AppColorConstants.primaryColorDark,
                                       ),
                                       child: Text(
                                         "CHECK",
@@ -381,8 +382,9 @@ class _ProductDetailsState extends State<ProductDetails> {
                           children: [
                             Align(
                               alignment: Alignment.centerLeft,
-                                                          child: Container(
-                                padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
+                              child: Container(
+                                padding: EdgeInsets.symmetric(
+                                    vertical: 10.0, horizontal: 16.0),
                                 decoration: BoxDecoration(
                                   borderRadius: BorderRadius.only(
                                     topRight: Radius.circular(20.0),
@@ -396,7 +398,7 @@ class _ProductDetailsState extends State<ProductDetails> {
                                 ),
                               ),
                             ),
-                            SizedBox(height: 315.0,child: ProductRelated()),
+                            SizedBox(height: 315.0, child: ProductRelated()),
                           ],
                         ),
                       ),
@@ -408,46 +410,63 @@ class _ProductDetailsState extends State<ProductDetails> {
             // Bottom Cart and buy button
             Container(
               width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(color: Colors.white),
+              // padding: const EdgeInsets.all(12.0),
               child: Row(
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // add to cart button
                   Expanded(
-                    flex: 1,
                     child: SizedBox(
-                      height: 56.0,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0.0,
-                          primary: AppColorConstants.secondaryColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(0.0),
+                      height: 64.0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0.0,
+                            primary: AppColorConstants.secondaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24.0),
+                            ),
                           ),
-                        ),
-                        child: Text(
-                          "ADD TO CART",
-                          style: GoogleFonts.lato(),
+                          icon: SvgPicture.asset(
+                            "assets/svg-icons/cart-white.svg",
+                            width: 16,
+                            height: 16,
+                          ),
+                          label: Text(
+                            "ADD TO CART",
+                            style: GoogleFonts.lato(),
+                          ),
                         ),
                       ),
                     ),
                   ),
                   // Buy now button
                   Expanded(
-                    flex: 1,
                     child: SizedBox(
-                      height: 56.0,
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          elevation: 0.0,
-                          primary: AppColorConstants.primaryColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(0.0),
+                      height: 64.0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: ElevatedButton.icon(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                            elevation: 0.0,
+                            primary: AppColorConstants.primaryColor,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24.0),
+                            ),
                           ),
-                        ),
-                        child: Text(
-                          "BUY NOW",
-                          style: GoogleFonts.lato(),
+                          icon: SvgPicture.asset(
+                            "assets/svg-icons/bag-icon.svg",
+                            width: 22,
+                            height: 22,
+                          ),
+                          label: Text(
+                            "BUY NOW",
+                            style: GoogleFonts.lato(),
+                          ),
                         ),
                       ),
                     ),
