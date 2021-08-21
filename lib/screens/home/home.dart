@@ -1,4 +1,6 @@
 import 'package:badges/badges.dart';
+import 'package:ecom_app/screens/cart/my_cart.dart';
+import 'package:ecom_app/screens/common_widgets/my_appbar_widget.dart';
 import 'package:ecom_app/screens/home/home_page.dart';
 import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/material.dart';
@@ -42,35 +44,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
-      appBar: AppBar(
-        title: Text(
-          widget.title,
-          style: GoogleFonts.lato(),
-        ),
-        elevation: 0.0,
-        bottomOpacity: 0.0,
-        actions: <Widget>[
-          Badge(
-            position: BadgePosition.topEnd(top: 5, end: 5),
-            badgeContent: Text(
-              '5',
-              style: GoogleFonts.lato(color: Colors.white),
-            ),
-            badgeColor: AppColorConstants.secondaryColor,
-            elevation: 0.0,
-            child: IconButton(
-              icon: SvgPicture.asset(
-                'assets/svg-icons/appbar-cart.svg',
-                height: 20,
-                width: 15,
-              ),
-              onPressed: () {
-                print('hi');
-              },
-            ),
-          ),
-        ],
-      ),
+      appBar: MyAppBarWidget.myAppBarWidget(widget.title, context),
       drawer: Drawer(
         child: ListView(
           // Important: Remove any padding from the ListView.

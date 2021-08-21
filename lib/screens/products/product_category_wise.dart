@@ -1,7 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:ecom_app/screens/products/filter_page.dart';
 import 'package:ecom_app/screens/products/product_details.dart';
-import 'package:ecom_app/screens/products/product_grid.dart';
 import 'package:ecom_app/constants/products_constant.dart';
 import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/material.dart';
@@ -81,7 +80,7 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
                   )
                 ],
               ),
-              padding: EdgeInsets.symmetric(vertical: 15.0, horizontal: 15.0),
+              padding: EdgeInsets.symmetric(vertical: 16.0, horizontal: 16.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -267,7 +266,9 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
                   ],
                 ),
               ),
-              SizedBox(width: 8.0,),
+              SizedBox(
+                width: 8.0,
+              ),
               Expanded(
                 flex: 4,
                 child: Column(
