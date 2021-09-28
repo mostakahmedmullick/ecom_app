@@ -28,6 +28,7 @@ class _ProductCategoryWiseState extends State<ProductCategoryWise> {
     return Scaffold(
       backgroundColor: Color(0xFFFFFFFF),
       appBar: AppBar(
+        backgroundColor: AppColorConstants.primaryColor,
         leading: IconButton(
           icon: SvgPicture.asset(
             'assets/svg-icons/left-arrow.svg',

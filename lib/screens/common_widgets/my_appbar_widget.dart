@@ -15,6 +15,7 @@ class MyAppBarWidget {
       ),
       elevation: 0.0,
       bottomOpacity: 0.0,
+      backgroundColor: AppColorConstants.primaryColor,
       actions: <Widget>[
         Badge(
           position: BadgePosition.topEnd(top: 5, end: 5),

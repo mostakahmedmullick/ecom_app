@@ -17,6 +17,7 @@ class _MyCartState extends State<MyCart> {
     return Scaffold(
       // backgroundColor: Colors.grey[200],
       appBar: AppBar(
+        backgroundColor: AppColorConstants.primaryColor,
         leading: IconButton(
           icon: SvgPicture.asset(
             'assets/svg-icons/left-arrow.svg',
@@ -163,7 +164,9 @@ class _MyCartState extends State<MyCart> {
                       ),
                     ],
                   ),
-                  SizedBox(height: 20.0,),
+                  SizedBox(
+                    height: 20.0,
+                  ),
                   // Place order button
                   SizedBox(
                     width: double.infinity,
@@ -175,7 +178,8 @@ class _MyCartState extends State<MyCart> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        padding: const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+                        padding: const EdgeInsets.symmetric(
+                            vertical: 16.0, horizontal: 12.0),
                       ),
                       child: Text(
                         "Place Order",

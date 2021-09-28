@@ -22,6 +22,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     return Scaffold(
       backgroundColor: Colors.grey[200],
       appBar: AppBar(
+        backgroundColor: AppColorConstants.primaryColor,
         leading: IconButton(
           icon: SvgPicture.asset(
             'assets/svg-icons/left-arrow.svg',
