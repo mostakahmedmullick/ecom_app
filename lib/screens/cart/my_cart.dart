@@ -1,3 +1,4 @@
+import 'package:ecom_app/screens/checkout/checkout_address.dart';
 import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -41,161 +42,141 @@ class _MyCartState extends State<MyCart> {
             Expanded(
               child: ListView.builder(
                 padding: const EdgeInsets.all(0.0),
-                itemCount: 6,
+                itemCount: 7,
                 itemBuilder: (BuildContext context, int index) {
-                  return _productCardWidget();
+                  if (index == 6)
+                    return _cartPriceDetailsCardWithPlaceOrder();
+                  else
+                    return _productCardWidget();
                 },
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(16.0),
-              decoration: BoxDecoration(color: Colors.white),
-              child: Column(
-                children: [
-                  // Price Of all items
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Price (2 items)",
-                        style: GoogleFonts.lato(
-                          fontSize: 14.0,
-                          color: AppColorConstants.fontColor,
-                        ),
-                      ),
-                      Text(
-                        '\u{20B9}450',
-                        style: GoogleFonts.lato(
-                          fontSize: 14.0,
-                          color: AppColorConstants.fontColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 4.0,
-                  ),
-                  // Discount
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Discount",
-                        style: GoogleFonts.lato(
-                          fontSize: 14.0,
-                          color: AppColorConstants.fontColor,
-                        ),
-                      ),
-                      Text(
-                        '-\u{20B9}55',
-                        style: GoogleFonts.lato(
-                          fontSize: 14.0,
-                          color: AppColorConstants.primaryColorDark,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 4.0,
-                  ),
-                  // Subtotal
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Subtotal",
-                        style: GoogleFonts.lato(
-                          fontSize: 14.0,
-                          color: AppColorConstants.fontColor,
-                        ),
-                      ),
-                      Text(
-                        '\u{20B9}395',
-                        style: GoogleFonts.lato(
-                          fontSize: 14.0,
-                          color: AppColorConstants.fontColor,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 4.0,
-                  ),
-                  // Shipping Charges
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Shipping Charges",
-                        style: GoogleFonts.lato(
-                          fontSize: 14.0,
-                          color: AppColorConstants.fontColor,
-                        ),
-                      ),
-                      Text(
-                        'FREE',
-                        style: GoogleFonts.lato(
-                          fontSize: 14.0,
-                          color: AppColorConstants.primaryColorDark,
-                        ),
-                      ),
-                    ],
-                  ),
-                  Divider(),
-                  // Total
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        "Total",
-                        style: GoogleFonts.lato(
-                          fontSize: 18.0,
-                          color: AppColorConstants.primaryColorDark,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                      Text(
-                        '\u{20B9}395',
-                        style: GoogleFonts.lato(
-                          fontSize: 18.0,
-                          color: AppColorConstants.primaryColorDark,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 20.0,
-                  ),
-                  // Place order button
-                  SizedBox(
-                    width: double.infinity,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        elevation: 0.0,
-                        primary: AppColorConstants.secondaryColor,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        padding: const EdgeInsets.symmetric(
-                            vertical: 16.0, horizontal: 12.0),
-                      ),
-                      child: Text(
-                        "Place Order",
-                        style: GoogleFonts.lato(
-                          fontSize: 16.0,
-                          // color: AppColorConstants.primaryColorDark,
-                          // fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            ),
+            _placeOrderButton(),
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _cartPriceDetailsCardWithPlaceOrder() {
+    return Container(
+      padding: const EdgeInsets.all(16.0),
+      decoration: BoxDecoration(color: Colors.white),
+      child: Column(
+        children: [
+          // Price Of all items
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Price (2 items)",
+                style: GoogleFonts.lato(
+                  fontSize: 14.0,
+                  color: AppColorConstants.fontColor,
+                ),
+              ),
+              Text(
+                '\u{20B9}450',
+                style: GoogleFonts.lato(
+                  fontSize: 14.0,
+                  color: AppColorConstants.fontColor,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          // Discount
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Discount",
+                style: GoogleFonts.lato(
+                  fontSize: 14.0,
+                  color: AppColorConstants.fontColor,
+                ),
+              ),
+              Text(
+                '-\u{20B9}55',
+                style: GoogleFonts.lato(
+                  fontSize: 14.0,
+                  color: AppColorConstants.primaryColorDark,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          // Subtotal
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Subtotal",
+                style: GoogleFonts.lato(
+                  fontSize: 14.0,
+                  color: AppColorConstants.fontColor,
+                ),
+              ),
+              Text(
+                '\u{20B9}395',
+                style: GoogleFonts.lato(
+                  fontSize: 14.0,
+                  color: AppColorConstants.fontColor,
+                ),
+              ),
+            ],
+          ),
+          SizedBox(
+            height: 4.0,
+          ),
+          // Shipping Charges
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Shipping Charges",
+                style: GoogleFonts.lato(
+                  fontSize: 14.0,
+                  color: AppColorConstants.fontColor,
+                ),
+              ),
+              Text(
+                'FREE',
+                style: GoogleFonts.lato(
+                  fontSize: 14.0,
+                  color: AppColorConstants.primaryColorDark,
+                ),
+              ),
+            ],
+          ),
+          Divider(),
+          // Total
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Total",
+                style: GoogleFonts.lato(
+                  fontSize: 18.0,
+                  color: AppColorConstants.primaryColorDark,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+              Text(
+                '\u{20B9}395',
+                style: GoogleFonts.lato(
+                  fontSize: 18.0,
+                  color: AppColorConstants.primaryColorDark,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -457,6 +438,54 @@ class _MyCartState extends State<MyCart> {
             //   ),
             // )
           ],
+        ),
+      ),
+    );
+  }
+
+  // Place order button
+  Widget _placeOrderButton() {
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey,
+            offset: Offset(0.0, 1.0), //(x,y)
+            blurRadius: 6.0,
+          ),
+        ],
+      ),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 12.0,
+        vertical: 12.0,
+      ),
+      child: SizedBox(
+        width: double.infinity,
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => CheckoutAddress()),
+            );
+          },
+          style: ElevatedButton.styleFrom(
+            elevation: 0.0,
+            primary: AppColorConstants.secondaryColor,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 12.0),
+          ),
+          child: Text(
+            "Place Order",
+            style: GoogleFonts.lato(
+              fontSize: 16.0,
+              // color: AppColorConstants.primaryColorDark,
+              // fontWeight: FontWeight.w600,
+            ),
+          ),
         ),
       ),
     );
