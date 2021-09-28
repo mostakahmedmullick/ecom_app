@@ -99,13 +99,13 @@ class _CheckoutAddressState extends State<CheckoutAddress> {
             fontWeight: FontWeight.w600,
           ),
         ),
-        style: ElevatedButton.styleFrom(
+        style: OutlinedButton.styleFrom(
           elevation: 0.0,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
-            side: BorderSide(
-              color: AppColorConstants.secondaryColor,
-            ),
+          ),
+          side: BorderSide(
+            color: AppColorConstants.secondaryColor,
           ),
           padding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 12.0),
         ),
