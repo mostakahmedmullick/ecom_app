@@ -1,3 +1,4 @@
+import 'package:ecom_app/screens/checkout/add_new_address.dart';
 import 'package:ecom_app/utils/app_color_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -81,10 +82,10 @@ class _CheckoutAddressState extends State<CheckoutAddress> {
       width: double.infinity,
       child: OutlinedButton.icon(
         onPressed: () {
-          // Navigator.push(
-          //   context,
-          //   MaterialPageRoute(builder: (context) => CheckoutAddress()),
-          // );
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddNewAddress()),
+          );
         },
         icon: Icon(
           Icons.add,
@@ -142,7 +143,7 @@ class _CheckoutAddressState extends State<CheckoutAddress> {
                   children: [
                     // Address Title
                     Text(
-                      "Home Address / Business Address",
+                      "Home Address / Office Address",
                       style: GoogleFonts.lato(
                         color: AppColorConstants.primaryColor,
                         fontSize: 15.0,
